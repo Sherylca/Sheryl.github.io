@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Logis Bootstrap Template - Services</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+<!-- Leaflet Js css link -->
+<link rel="stylesheet" href="Leaflet/leaflet.css"/> 
+
+<!-- LEAFLET -->
+<!-- Leaflet Js Script link -->
+<script src="Leaflet/leaflet.js"></script>
+
+<!-- Data  -->
+<script src="Data/Tingkat_Bahaya.js"></script>
+<script src="Data/Tingkat_Kerentanan.js"></script>
+<script src="Data/Tingkat_Kapasitas.js"></script>
+<script src="Data/Tingkat_Risiko.js"></script>
+<script src="Data/Kecamatan.js"></script>
+<script src="Data/Titik_Sampel.js"></script>
+
+<!-- Leaflet Control Geocoder -->
+<link rel="stylesheet" href="Leaflet/leaflet-control-geocoder.css" />
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+<!-- Leaflet Coordinate -->
+<link rel="stylesheet" href="Leaflet/leaflet-locatecontrol.css">
+<script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+
+<!-- Leaflet Control Zoombar -->
+<link rel="stylesheet" type="text/css" href="Leaflet/L.Control.ZoomBar.css"/>
+<script type="text/javascript" src="Leaflet/L.Control.ZoomBar.js"></script> 
+
+<!-- Leaflet Scale -->
+<script type="text/javascript" src="Leaflet/Leaflet.Coordinates-0.1.5.min.js"></script>
+<link rel="stylesheet" href="Leaflet/Leaflet.Coordinates-0.1.5.css"/>
+
+<!-- Leaflet Legend -->
+<script type="text/javascript" src="Leaflet/leaflet.legend.js"></script>
+<link rel="stylesheet" href="Leaflet/leaflet.legend.css" />
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>SIRINA (SISTEM INFORMASI RISIKO TSUNAMI)
+        </h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Map</a></li>
+          <li class="dropdown"><a href="#"><span>Download Data</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="https://drive.google.com/file/d/1MPdPWddOF-jKiFIl2aMoKKRCW6ZfnmJV/view?usp=sharing">Shapefile Tingkat Bahaya</a></li>
+              <li><a href="https://drive.google.com/file/d/1C0_mUVuI7_j7Lisxi1M5Zec3ytWzQ4dc/view?usp=sharing">Shapefile Tingkat Kerentanan</a></li>
+              <li><a href="https://drive.google.com/file/d/1lGP1CtAyOMFqVBZ13SwKkDeA2qbsGjF9/view?usp=sharing">Shapefile Tingkat Kapasitas</a></li>
+              <li><a href="https://drive.google.com/file/d/1BVZGTZZdbF3tnC61Z3aZVUGx2FDGDLZQ/view?usp=sharing">Shapefile Tingkat Risiko</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/header.jpeg');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2></h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Map</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+    <div class="content"> 
+      <div id="map" style="width: 100%; height: 75vh; color:black;"></div> 
+   </div> 
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container">
+
+        <div class="row gy-4">
+
+         
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="service" class="services pt-0">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <span></span>
+          <h2></h2>
+
+        </div>
+
+        
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>SIRINA</span>
+          </a>
+          <p></p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.instagram.com/sherylchaitrina/" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sherylchaitrina/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>
+            Jalan Sekepanjang <br>
+            Kota Bandung <br>
+            Jawa Barat, Indonesia <br><br>
+            <strong>Phone:</strong> 087823769200 <br>
+            <strong>Email:</strong> sh3ryl.chaitrina@gmail.com<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>SIRINA</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- WEBGIS -->
+ <script>
+ 
+//  var tingkat_bahaya_tsunami = new L.LayerGroup();
+ 
+// Map initialization
+var map = L.map('map', {
+        center: [-7.638155, 107.727027],
+        zoom: 13,
+        zoomControl: false,
+        layers: []
+    });
+
+    // Open Street Map
+    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    osm.addTo(map);
+
+    // Carto Dark
+    var carto_dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 20
+    });
+
+    // carto_dark.addTo(map);
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+
+    // Google Maps
+    var GoogleMaps = new L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', { opacity: 1.0,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">Google Maps</a>'
+    });
+    
+    // GoogleMaps.addTo(map);
+
+    // ----------------------------------------
+    // Making layer control
+    var baseLayers = {
+        "<img class ='layer_img' src= 'assets/img/osm.jpeg'/> <span class = 'layer_osm'>Open Street Map</span>" : osm,
+        "<img class ='layer_img' src= 'assets/img/carto.jpeg'/> <span class = 'layer_carto'> Carto Dark Map</span>" : carto_dark,
+        "<img class ='layer_img' src= 'assets/img/google-maps.png'/> <span class = 'layer_gmaps'> Google Maps</span>" : GoogleMaps,
+        "<img class ='layer_img' src= 'assets/img/esri.png'/> <span class = 'layer_gmaps'> ESRI </span>" : Esri_WorldImagery
+    };
+
+
+    // Leaflet control geocoder
+    L.Control.geocoder({
+        position: "topleft",
+        collapsed: true
+    }).addTo(map);
+
+
+    /* GPS enabled geolocation control set to follow the user's location */
+    var locateControl = L.control.locate({
+    position: "topleft",
+    drawCircle: true,
+    follow: true,
+    setView: true,
+    keepCurrentZoomLevel: true,
+    markerStyle: {
+        weight: 1,
+        opacity: 0.8,
+        fillOpacity: 0.8
+    },
+    circleStyle: {
+        weight: 1,
+        clickable: false
+    },
+    icon: "fa fa-location-arrow",
+    metric: false,
+    strings: {
+        title: "My location",
+        popup: "You are within {distance} {unit} from this point",
+        outsideMapBoundsMsg: "You seem located outside the boundaries of the map"
+    },
+    locateOptions: {
+        maxZoom: 18,
+        watch: true,
+        enableHighAccuracy: true,
+        maximumAge: 10000,
+        timeout: 10000
+    }
+    }).addTo(map);
+
+    // leaflet Control ZoomBar
+    var zoom_bar = new L.Control.ZoomBar({
+            position: 'topleft'
+        }).addTo(map);
+
+    // Leaflet.Coordinates
+    L.control.coordinates({
+            position: "bottomleft",
+            decimals: 2,
+            decimalSeperator: ",",
+            labelTemplateLat: "Latitude: {y}",
+            labelTemplateLng: "Longitude: {x}"
+        }).addTo(map);
+    /* scala */
+    L.control.scale({
+        metric: true,
+        position: "bottomleft"
+    }).addTo(map);
+ 
+    // L.control.layers(baseLayers, {}, {collapsed: true}).addTo(map);
+
+    var north = L.control({position: "bottomleft"}); 
+north.onAdd = function(map) { 
+        var div = L.DomUtil.create("div", "info legend"); 
+        div.innerHTML = '<img src="assets/arah-mata-angin-1.png"style=width:100px;>'; 
+                return div; } 
+north.addTo(map);
+
+// var tingkat = L.geoJson(tingkat_bahaya_tsunami).addTo(map);
+
+    // Tingkat Bahaya
+    var Tingkat_Bahaya_Tsunami = L.geoJson(Tingkat_Bahaya_Tsunami, {
+            style: function(feature){
+                var fillColor,
+                    kode = feature.properties.Keterangan;
+                if (kode == "Sangat Tinggi" ) fillColor = "#fc0303"
+                else if ( kode == "Tinggi" ) fillColor ="#fc5603"
+                else if ( kode == "Sedang" ) fillColor ="#e8fc03"
+                else if ( kode == "Rendah" ) fillColor ="#03fc24"
+                else fillColor = "#f7f7f7"; // no data
+                return { color: "#999", weight: 0.1, fillColor: fillColor, fillOpacity: .9 };
+            },
+            onEachFeature: function( feature, layer ){
+                layer.bindPopup(feature.properties.Keterangan)
+                }
+            });
+// Tingkat Kerentanan
+var Tingkat_Kerentanan = L.geoJson(Tingkat_Kerentanan, {
+            style: function(feature){
+                var fillColor,
+                    kode = feature.properties.Rentan;
+                if (kode == "Tinggi" ) fillColor = "#fc5603"
+                else if ( kode == "Sedang" ) fillColor ="#e8fc03"
+                else fillColor = "#f7f7f7"; // no data
+                return { color: "#999", weight: 0.1, fillColor: fillColor, fillOpacity: .9 };
+            },
+            onEachFeature: function( feature, layer ){
+                layer.bindPopup(feature.properties.Rentan)
+                }
+            });
+// Tingkat Kapasitas
+var Tingkat_Kapasitas = L.geoJson(Tingkat_Kapasitas, {
+            style: function(feature){
+                var fillColor,
+                    kode = feature.properties.kapasitas;
+                if (kode == "Sedang" ) fillColor = "#e8fc03"
+                else if (kode == "Tinggi" ) fillColor = "#fc5603"
+                else fillColor = "#f7f7f7"; // no data
+                return { color: "#999", weight: 0.1, fillColor: fillColor, fillOpacity: .9 };
+            },
+            onEachFeature: function( feature, layer ){
+                layer.bindPopup(feature.properties.kapasitas)
+                }
+            });
+// Tingkat Risiko
+var Tingkat_Risiko = L.geoJson(Tingkat_Risiko, {
+            style: function(feature){
+                var fillColor,
+                    kode = feature.properties.Risiko;
+                if (kode == "Tinggi" ) fillColor = "#fc5603"
+                else if (kode == "Sedang" ) fillColor = "#e8fc03"
+                else fillColor = "#f7f7f7"; // no data
+                return { color: "#999", weight: 0.1, fillColor: fillColor, fillOpacity: .9 };
+            },
+            onEachFeature: function( feature, layer ){
+                layer.bindPopup(feature.properties.Risiko)
+                }
+            });
+// Kecamatan
+var myStyle = {
+    "color": "#000000",
+    "weight": 5,
+    "opacity": 0.65,
+    "fillOpacity" : 0
+};
+
+var Kecamatan = L.geoJson(Kecamatan, {
+            style: myStyle,
+            onEachFeature: function( feature, layer ){
+                layer.bindPopup(feature.properties.NAMOBJ)
+                }
+            });
+// Titik Sampel
+var Titik_Sampel = L.geoJson(Titik_Sampel, {
+            style: function(feature){
+                var fillColor,
+                    kode = feature.properties.Name;
+                if (kode == "titik sampel 1" ) fillColor = "#fc5603"
+                else if (kode == "titik sampel 2" ) fillColor = "#fc5603"
+                else if (kode == "titik sampel 3" ) fillColor = "#fc5603"
+                else if (kode == "titik sampel 4" ) fillColor = "#fc5603"
+                else fillColor = "#f7f7f7"; // no data
+                return { color: "#999", weight: 0.1, fillColor: fillColor, fillOpacity: .9 };
+            },
+            onEachFeature: function( feature, layer ){
+                layer.bindPopup(feature.properties.Name)
+                }
+            });
+    var overlayMaps = {
+      "Batas Kecamatan" : Kecamatan,
+      "Tingkat Bahaya Tsunami" : Tingkat_Bahaya_Tsunami,
+      "Tingkat Kerentanan Tsunami" : Tingkat_Kerentanan,
+      "Tingkat Kapasitas Tsunami" : Tingkat_Kapasitas,
+      "Tingkat Risiko Tsunami" : Tingkat_Risiko,
+      "Titik Sampel" : Titik_Sampel
+    };
+
+    L.control.layers(baseLayers, {}, {collapsed: true}).addTo(map);
+    L.control.layers({}, overlayMaps, {collapsed: true}).addTo(map);
+
+
+    // Legend
+    const legend = L.control.Legend({
+            position: "bottomright",
+            title: "Keterangan",
+            collapsed: false,
+            symbolWidth: 20,
+            opacity: 1,
+            column: 1,
+            legends: [{
+                label: "Batas Kecamatan",
+                font: 29,
+                type: "polyline",
+                color: "#000000",
+                fillColor: "000000",
+                weight: 2
+            },{
+                label: "Sangat Tinggi",
+                font: 29,
+                type: "polygon",
+                sides: 4,
+                color: "#fc0303",
+                fillColor: "#fc0303",
+                weight: 1
+            },{
+                label: "Tinggi",
+                type: "polygon",
+                sides: 4,
+                color: "#fc5603",
+                fillColor: "#fc5603",
+                weight: 1
+            },{
+                label: "Sedang",
+                type: "polygon",
+                sides: 4,
+                color: "#e8fc03",
+                fillColor: "#e8fc03",
+                weight: 1
+            },{
+                label: "Rendah",
+                type: "polygon",
+                sides: 4,
+                color: "#03fc24",
+                fillColor: "#03fc24",
+                weight: 1
+            },{
+                label: "Titik Sampel",
+                type: "image",
+                url: "assets/img/marker-icon.png"
+            }]
+        })
+        .addTo(map);
+    
+    // // DATA 
+    // -------------------------------------------
+    // GeoJson
+    // // K1B
+    // var K1B_style = {
+    //     "color": "#f54e42",
+    //     "weight": 3,
+    //     "opacity": 1
+    // };
+
+    // var rute_K1B = L.geoJSON(K1B, {
+    //     style: K1B_style}).bindPopup(function (layer) {
+    //     return layer.feature.properties.name;
+    // });
+
+    // // K2B
+    // var K2B_style = {
+    //     "color": "#63f542",
+    //     "weight": 3,
+    //     "opacity": 1
+    // };
+
+    // var rute_K2B = L.geoJSON(K2B, {
+    //     style: K2B_style}).bindPopup(function (layer) {
+    //     return layer.feature.properties.name;
+    // });
+    
+    // // K5B
+    // var K5B_style = {
+    //     "color": "#4263f5",
+    //     "weight": 3,
+    //     "opacity": 1
+    // };
+
+    // var rute_K5B = L.geoJSON(K5B, {
+    //     style: K5B_style}).bindPopup(function (layer) {
+    //     return layer.feature.properties.name;
+    // });
+
+    // // K6B
+    // var K6B_style = {
+    //     "color": "#bc42f5",
+    //     "weight": 3,
+    //     "opacity": 1
+    // };
+
+    // var rute_K6B = L.geoJSON(K6B, {
+    //     style: K6B_style}).bindPopup(function (layer) {
+    //     return layer.feature.properties.name;
+    // });
+
+    // // Halte 
+    // var halte_icon = L.icon({
+    //     iconUrl: 'Icon/bus-green.png',
+    //     iconSize: [15, 15]
+    // });
+
+    // var halte_bus = L.geoJSON(halte, {
+    //     pointToLayer: function(feature,latlng){
+    //         var marker = L.marker(latlng,{icon: halte_icon});
+    //         marker.bindPopup(function (layer) {
+    //             return feature.properties.name + " \n" + feature.properties.address})
+    //         return marker;
+    //         }
+    // });
+
+
+
+    // L.control.layers(baseLayers, {}, {collapsed: true}).addTo(map);
+    // L.control.layers({}, overlayMaps, {collapsed: false}).addTo(map);
+    //  $.getJSON("assets/GunungApi.geojson",function(data){ 
+    //      var ratIcon = L.icon({ 
+    //      iconUrl: 'assets/Marker-1.png', 
+    //      iconSize: [12,10] 
+    //      }); 
+    //      L.geoJson(data,{ 
+    //          pointToLayer: function(feature,latlng){ 
+    //              var marker = L.marker(latlng,{icon: ratIcon}); 
+    //              marker.bindPopup(feature.properties.Nama); 
+    //              return marker; 
+    //          } 
+    //      }).addTo(GunungApi); 
+    //  });
+ 
+    //  $.getJSON("assets/IbuKotaProv.geojson",function(data){ 
+    //      var ratIcon = L.icon({ 
+    //      iconUrl: 'assets/Marker-3.png', 
+    //      iconSize: [12,10] 
+    //      }); 
+    //      L.geoJson(data,{ 
+    //          pointToLayer: function(feature,latlng){ 
+    //              var marker = L.marker(latlng,{icon: ratIcon}); 
+    //              marker.bindPopup(feature.properties.CITY_NAME); 
+    //              return marker; 
+    //          } 
+    //      }).addTo(IbuKotaProv); 
+    //  });
+ 
+    //  $.getJSON("assets/Puskesmas.geojson",function(data){ 
+    //      var ratIcon = L.icon({ 
+    //      iconUrl: 'assets/Marker-4.png', 
+    //      iconSize: [12,10] 
+    //      }); 
+    //      L.geoJson(data,{ 
+    //          pointToLayer: function(feature,latlng){ 
+    //              var marker = L.marker(latlng,{icon: ratIcon}); 
+    //              marker.bindPopup(feature.properties.NAMOBJ); 
+    //              return marker; 
+    //          } 
+    //      }).addTo(Faskes); 
+    //  });
+ 
+    //  $.getJSON("assets/Poliklinik.geojson",function(data){ 
+    //      var ratIcon = L.icon({ 
+    //      iconUrl: 'assets/Marker-5.png', 
+    //      iconSize: [12,10] 
+    //      }); 
+    //      L.geoJson(data,{ 
+    //          pointToLayer: function(feature,latlng){ 
+    //              var marker = L.marker(latlng,{icon: ratIcon}); 
+    //              marker.bindPopup(feature.properties.NAMOBJ); 
+    //              return marker; 
+    //          } 
+    //      }).addTo(Faskes); 
+    //  });
+ 
+    //  $.getJSON("assets/RSU.geojson",function(data){ 
+    //      var ratIcon = L.icon({ 
+    //      iconUrl: 'assets/Marker-6.png', 
+    //      iconSize: [12,10] 
+    //      }); 
+    //      L.geoJson(data,{ 
+    //          pointToLayer: function(feature,latlng){ 
+    //              var marker = L.marker(latlng,{icon: ratIcon}); 
+    //              marker.bindPopup(feature.properties.NAMOBJ); 
+    //              return marker; 
+    //          } 
+    //      }).addTo(Faskes); 
+    //  });
+ 
+    //  $.getJSON("assets/PosHujan.geojson",function(data){ 
+    //      var ratIcon = L.icon({ 
+    //      iconUrl: 'assets/Marker-2.png', 
+    //      iconSize: [12,10] 
+    //      }); 
+    //      L.geoJson(data,{ 
+    //          pointToLayer: function(feature,latlng){ 
+    //              var marker = L.marker(latlng,{icon: ratIcon}); 
+    //              marker.bindPopup(feature.properties.pos_hujan); 
+    //              return marker; 
+    //          } 
+    //      }).addTo(PosHujan); 
+    //  });
+ 
+    //  $.getJSON("assets/JarSungai.geojson",function(kode){ 
+    //          L.geoJson( kode, { 
+    //          style: function(feature){ 
+    //            var color, 
+    //            kode = feature.properties.kode; 
+    //            if ( kode < 2 ) color = "#f2051d"; 
+    //            else if ( kode > 0 ) color = "#f2051d"; 
+    //            else color = "#f2051d"; // no data 
+    //              return { color: "#999", weight: 5, color: color, fillOpacity: .8 }; 
+    //            }, 
+    //            onEachFeature: function( feature, layer ){ 
+    //                layer.bindPopup 
+    //                () 
+    //            } }).addTo(JarSungai); 
+    //          });
+ 
+    //  $.getJSON("assets/Provinsi.geojson",function(Kode){
+    //    L.geoJson( Kode, {
+    //     style: function(feature){
+    //      var fillColor,
+    //        Kode = feature.properties.Kode;
+    //      if (Kode>21) fillColor = "#006837"; 
+    //      else if (Kode>20) fillColor="#fec44f"
+    //      else if (Kode>19) fillColor="#c2e699"
+    //      else if (Kode>18) fillColor="#fee0d2"
+    //      else if (Kode>17) fillColor="#756bb1"
+    //      else if (Kode>16) fillColor="#8c510a"
+    //      else if (Kode>15) fillColor="#01665e"
+    //      else if (Kode>14) fillColor="#e41a1c"
+    //      else if (Kode>13) fillColor="#636363"
+    //      else if (Kode>12) fillColor= "#762a83"
+    //      else if (Kode>11) fillColor="#1b7837"
+    //      else if (Kode>10) fillColor="#d53e4f"
+    //      else if (Kode>9) fillColor="#67001f"
+    //      else if (Kode>8) fillColor="#c994c7"
+    //      else if (Kode>7) fillColor="#fdbb84"
+    //      else if (Kode>6) fillColor="#dd1c77"
+    //      else if (Kode>5) fillColor="#3182bd"
+    //      else if (Kode>4) fillColor ="#f03b20"
+    //      else if (Kode>3) fillColor = "#31a354";
+    //      else if (Kode>2) fillColor = "#78c679";
+    //      else if (Kode>1) fillColor = "#c2e699";
+    //      else if (Kode>0) fillColor = "#ffffcc";
+    //      else fillColor = "#f7f7f7"; // no data
+    //      return { color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
+    //     },
+    //     onEachFeature: function( feature, layer ){
+    //      layer.bindPopup(feature.properties.Provinsi)
+    //     }
+    //    }).addTo(Provinsi);
+      // });
+ 
+    //   var overlayMaps = {
+    //     "Halte" : halte_bus,
+    //     "Rute K1B": rute_K1B,
+    //     "Rute K2B": rute_K2B,
+    //     "Rute K5B": rute_K5B,
+    //     "Rute K6B": rute_K6B,
+    //     "Batas Kecamatan": kecamatan_bogor
+    // };
+
+    // L.control.layers(baseLayers, {}, {collapsed: true}).addTo(map);
+    // L.control.layers({}, overlayMaps, {collapsed: false}).addTo(map);
+
+    
+ 
+ </script>
+</body>
+
+</html>
